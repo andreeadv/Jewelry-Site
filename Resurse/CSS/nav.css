@@ -1,0 +1,120 @@
+ #hamburger, #ch-menu{
+    display:none;
+}
+
+body{
+    --inaltime-meniu:50px;
+    --latime-buton:217px;
+    --culoare-meniu:var(--culoare1-tabel);
+    --highlight-meniu:#e67fb2;
+}
+nav{
+    --text-meniu:black;
+    background-color: var(--culoare1-tabel);
+    /* pt a scoate latimea scrollbarului vertical */
+    width: calc(100vw - 18px);
+    height: var(--inaltime-meniu);
+    position: sticky;
+    /* ca sa nu mai fie niciun spatiu sus */
+    top:0;
+    margin-left: calc(-1 * var(--spatiere-pagina));
+    /* sa apara iconu sub meniu */
+    z-index:1;
+}
+ul.meniu{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  
+}
+ul.meniu>li{
+    flex-grow: 0;
+    flex-shrink:0;
+    flex-basis: var(--latime-buton);
+
+}
+ul.meniu, ul.meniu ul{
+    padding:0;
+    margin: 0;
+    list-style-type: none;
+}
+
+ul.meniu li{
+    width:var(--latime-buton);
+    height:var(--inaltime-meniu);
+    background-color: var(--culoare-meniu);
+    overflow:hidden;
+    text-align: center;
+    /* border: 1px solid var(--culoare-border-buton); */
+    /* asta era de la lab */
+    transition: background-color 0.3s linear;
+    box-sizing: border-box;
+}
+ul.meniu li:hover{
+    overflow:visible;
+    background-color: var(--highlight-meniu);
+}
+
+/* TASK MENIU */
+/* iau doar li-urile directe, adica doar cele 4 butoane principale */
+ul.meniu>li{
+    transition: box-shadow 0.5s ease-out;
+}
+ul.meniu>li:hover{
+    box-shadow: inset 0 0 15px var(--culoare-highlight);   
+}
+
+ul.meniu ul{
+    transform-origin: top;
+    transition:transform 0.5s linear;
+    transform:scale(1,0);
+    /* sau */
+    /* transform:scaleY(0); */
+
+}
+
+ul.meniu li:hover ul{
+    transform:scale(1,1); 
+    /* sau */
+    /* transform:scaleY(1); */
+
+}
+
+
+/* sa nu se afiseze deocamdata sub sub meniul */
+.subsubmeniu li{
+    display: none;
+}
+
+/* stilizare taburi submeniu cu sagetica */
+
+/* ul.meniu ul li{
+    background-color: red;
+} */
+ul.meniu li div, ul.meniu li a{
+    display:block;
+    width:100%;
+    height:100%;
+    color:var(--text-meniu);
+    text-decoration: none;
+    font-weight: bold;
+    line-height: var(--inaltime-meniu);
+
+}
+#acasa-mediu{
+    display:none;
+}
+
+.sageata {
+    opacity: 0;
+    transition: all 0.3s linear;
+    position: absolute;
+    left: 5px;
+
+}
+
+a:hover .sageata {
+    opacity: 1;
+    display: block;
+    transform: translateX(100%);
+}

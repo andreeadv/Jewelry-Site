@@ -1,0 +1,351 @@
+
+html{
+    font-size:16px;
+    font-family: 'Libre Baskerville', serif;
+}
+
+
+/* definire variabile pentru culorile alese */
+body{
+    --culoare-background:#FAD9E2;
+    --culoare-highlight:#F9D1FF;
+    --culoare-text:black;
+    --culoare-border:#CFA9C6;
+    --culoare-border-buton:#a34a85;
+    --avisited:#702256;
+    --subtitrari:#2c0a21;
+    --culoare-taburi:#E3BDBA;
+    --latime-tab:120px;
+    --inaltime-buton:50px;
+    --culoare2-tabel:#E3BAC0;
+    --culoare1-tabel:#E391BA; 
+    --spatiere-pagina:50px;
+    --padding-sectiune:15px; 
+    --radius-tabel:15px;
+    --culoare-grid:#FDC5C3;
+    --c1gradient:#f579cc;
+    /* sa nu mai am la meniu spatierea din stanga */
+    margin:0;
+}
+
+body{
+    background-color: var(--culoare-highlight);
+    color:var(--culoare-text);
+    padding-left:var(--spatiere-pagina);
+    padding-right:var(--spatiere-pagina);
+    /* cu var accesez variabilele */
+    /* min-width: 450px;
+    margin:0; */
+    margin:0;
+}
+#grid-pagina{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    grid-template-areas:"z-acasa z-acasa z-acasa z-acasa" 
+                        "z-bratari z-tabel z-tabel z-cercei" 
+                        "z-populare z-populare z-populare z-populare"        
+                        "z-reduse z-reduse z-accesorii z-ingrijire"
+                        
+                        
+                                
+    ;
+     gap:30px 15px; 
+     border-radius: var(--radius-tabel); 
+     background-color: var(--culoare-highlight); 
+   
+    
+}
+/*aceeasi configuratie a gridului,dar cu  o alta varianta de distribuire a informatie */
+/* #grid-pagina{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    grid-template-areas:"z-acasa z-acasa z-acasa z-acasa" 
+                        "z-bratari z-tabel z-tabel z-cercei" 
+                        "z-populare z-populare z-populare z-populare"        
+                        "z-ingrijire z-ingrijire z-reduse z-accesorii"
+                        
+                        
+                                
+    ;
+    gap:20px 15px;
+    
+} */
+
+#grid-pagina>*{
+    border:3px solid var(--culoare-border);
+    padding:var(--padding-sectiune);
+    border-radius:var(--radius-tabel);
+    box-shadow: inset 0 0 10px var(--culoare-border);
+ 
+}
+#acasa{
+    grid-area: z-acasa; 
+}
+
+#populare{
+    grid-area: z-populare;
+}
+#reduse{
+    grid-area: z-reduse;
+}
+#bratari{
+    grid-area:z-bratari;
+}
+/* #coliere{
+    grid-area:z-coliere;
+} */
+
+#cercei{
+    grid-area:z-cercei;
+}
+
+#reduse{
+    grid-area:z-reduse;
+}
+#populare{
+    grid-area:z-populare;
+}
+#accesorii{
+    grid-area:z-accesorii;
+}
+#ingrijire{
+    grid-area:z-ingrijire;
+}
+#tabel{
+    grid-area:z-tabel;
+}
+
+.container-iframe iframe{
+    border:4px solid var(--culoare-border-buton);
+
+}
+.taburi-iframe{
+    display:flex;
+    justify-content: flex-end;
+}
+.taburi-iframe a{
+    display:flex;
+    width:var(--latime-tab);
+    height:var(--inaltime-buton);
+    background-color: var(--culoare-taburi); 
+
+    text-decoration: none;
+    font-weight:bold;
+    justify-content: center;
+    align-items:center;
+
+    border-bottom-left-radius:25px;
+    border-bottom-right-radius:25px;
+
+    box-shadow: inset 0 0 15px var(--culoare-border-buton);
+    /* ca sa le departez si sa apara border topul ca in exemplu*/
+    border:10px solid transparent;
+    margin-top:-5px;
+    border-color:var(--culoare-highlight);
+    border-top: 9px solid var(--culoare-border-buton);
+    overflow:hidden;
+}
+.taburi-iframe a:hover{
+    background-color: var(--culoare-highlight);
+    transition:background-color 0.3s linear;
+}
+
+
+#ext {
+    position: fixed;
+    border: 3px solid var(--culoare-border);
+    rotate: 45deg;
+    width: 55px;
+    height: 55px;
+    /* dest fata de marg */
+    bottom: 20px;
+    right: 20px;
+
+}
+#int {
+    width: 0;
+    height: 0;
+    rotate:-45deg; 
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 30px solid rgb(163, 73, 133, 0.5);
+    margin-top: 10px;
+    margin-left: -5px;
+    border-bottom-left-radius: 45px;
+    border-bottom-right-radius: 45px;
+}
+#ext:hover {
+    background-color: rgb(0, 0, 0, 0.5);
+    transition:  all 0.35s linear;
+}
+#ext:hover #int {
+    border-bottom-color: var(--culoare-highlight);
+    transition: all 0.35s linear;
+}
+
+#back-to-top{
+    color: var(--text-black);
+    text-decoration: none;
+}
+
+h1{
+   font-size:  2.5rem;
+   text-align: center;
+   
+}
+h2{
+    font-size:  2rem;
+ }
+ /* rem=relativ la root */
+#hpopulare{
+    text-align: center;
+}
+ table{
+    caption-side: bottom;
+    /* Proprietatea border-collapse cu valoarea collapse, comasează borderele vecine într-unul singur  */
+    border-collapse: collapse;
+    /* se asigura că acesta se va încadra corect în container și nu va depăși limitele acestuia */
+     width: 100%; 
+     overflow: hidden;
+     border-radius: var(--radius-tabel);
+     
+
+ }
+
+ .tcontainer{
+    border: 2px solid var(--culoare-border-buton);
+    border-radius: var(--radius-tabel);  
+    overflow: hidden;
+ }
+
+ caption{
+    font-size: 1.2em;
+ }
+
+ th {
+    padding: 10px;
+    border-bottom: 2px solid var(--culoare-border-buton);
+    text-align: center;
+}
+  
+td {
+    padding: 10px;
+    text-align: center;  
+}
+
+
+  /* selectez toate celulele de pe un rand */
+tr:hover td{
+    background-color: var(--culoare-highlight);
+    transition: 0.4s ease-in;
+
+}
+
+tr:hover td:hover{
+    background-color: var(--culoare-border);
+    transition:0.5s ease-in;
+}
+/* Stilizare pentru coloanele pare */
+td:nth-child(even), th:nth-child(even) {
+    background-color: var(--culoare1-tabel);
+  }
+  /* Stilizare pentru coloanele impare */
+td:nth-child(odd), th:nth-child(odd) {
+    background-color: var(--culoare2-tabel);
+  }
+
+img,source{
+    width:100%;
+    max-width: 600px;
+}
+iframe{
+    width:100%;
+    min-width: 400px;
+}
+
+
+#poster{
+    width:100%;
+    max-width: 1200px;
+    max-height: 500px;
+    border-radius: var(--radius-tabel);
+    
+}
+
+main{
+    margin-top:40px;
+}
+
+/* etapa3 */
+header{
+    background-color: var(--culoare2-tabel);
+    padding:var(--padding-sectiune);
+    box-shadow: inset 0 0 30px var(--culoare-border-buton);
+    margin-left: calc(-1 * var(--spatiere-pagina));
+    margin-right: calc(-1 * var(--spatiere-pagina));
+   
+    
+}
+
+
+/* etapa 4 */
+
+main a:visited{
+    color:var(--avisited);
+}
+/* fara acel not se miscau butoanele ciudat */
+
+main a:active:not(.taburi-iframe a){
+    border: 1px solid black ;
+}
+
+/* a[href^="https"]	Selects every <a> element whose href attribute value begins with "https" */
+main a[href^="http"]::before{
+    content:"⮳";
+    font-size: 1.5em;
+    font-weight: bold;
+}
+main a[href^="http"]:hover::before{
+    color:black;
+}
+
+/* link frumos*/
+main a{
+    background-image: radial-gradient( var(--c1gradient) 0%, var(--c1gradient) 40%, transparent 80%, transparent 100%);
+    background-position: center; 
+    background-size: 0% 0%; 
+    background-repeat: no-repeat;
+    transition: all 0.5s linear;
+} 
+main a:hover{
+    background-size: 100% 100%;
+}
+
+footer{
+    background-color:var(--culoare1-tabel);
+    margin-top:30px;
+    padding:var(--spatiere-pagina);
+    margin-left: calc(-1 * var(--spatiere-pagina));
+    margin-right: calc(-1 * var(--spatiere-pagina));
+    box-shadow: inset 0 0 30px var(--culoare-border-buton);
+
+}
+video{
+    width:100%;
+    max-width: 500px;
+    max-height:290px;
+    min-width: 300px;
+    object-fit: fill;
+}
+.container-video{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+video::cue{
+    background-color: rgb(255, 255, 255, 0.3);
+    color:var(--subtitrari);
+    font-weight: bold;
+}
+

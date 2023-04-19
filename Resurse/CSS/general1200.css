@@ -1,0 +1,41 @@
+html{
+    font-size:14px;
+    transition:0.3s linear;
+}
+body{
+    --spatiere-pagina:30px;
+    --padding-sectiune:10px;
+}
+#grid-pagina{
+    grid-template-columns:repeat(3,1fr);
+    grid-template-areas:"z-acasa z-acasa z-acasa " 
+                        "z-bratari z-tabel z-cercei" 
+                        "z-populare z-populare z-populare"        
+                        "z-reduse z-accesorii z-ingrijire"
+                        
+                        
+                                
+    ;
+    gap:25px 10px;
+}
+/* #grid-pagina{
+    grid-template-columns:repeat(3, fr);
+    grid-template-areas:"z-acasa z-acasa z-acasa" 
+                        "z-bratari z-tabel z-cercei" 
+                        "z-populare z-populare z-populare"        
+                        "z-ingrijire z-reduse z-accesorii"
+                            
+    ;
+    gap:15px 10px;
+} */
+
+
+
+.tcontainer{
+    overflow-x: auto;
+    max-width: 100%;
+}
+
+.tcontainer{
+    overflow-x: auto;
+  }

@@ -1,0 +1,100 @@
+
+@media print {
+
+	#banner{
+		position: absolute;
+		width:80%;
+		height:20px;
+		overflow: visible;
+        border: 2px dotted black;
+        top: 0;
+        text-align: center;
+        justify-content: center;
+        margin-left:50px;
+        
+	}
+    img, iframe, video, nav, figcaption{
+        display:none;
+    }
+    div.taburi-iframe{
+        display: none;
+    }
+    #ext{
+        display: none;
+    }
+    a{
+        text-decoration: none;
+        color:black;
+
+    }
+    #grid-pagina>*{
+        box-shadow:none;
+        margin-bottom: 1px;
+        padding: 10px;
+        border:none;
+    }
+    h1{
+		page-break-after: always;
+		margin-top: 30%;
+		text-align:center;
+		margin-left:1cm;
+        text-decoration: underline;
+        font-size:  2.5rem;
+	}
+    header{
+        box-shadow: none;
+    }
+    #grid-pagina{
+            font-size: 10px;
+            box-sizing:border-box;
+            page-break-before:always;
+            background-color: white;   
+            display:block;
+            
+    }
+    footer{
+        page-break-before: always;
+        box-shadow: none;
+    }
+
+    #watermark
+    {
+        display: block;
+        position: fixed;/*apare pe toate paginile*/
+        bottom:0;
+        color:rgba(0,0,0,0.65);
+        right:0;
+        width:100px;
+        height:2cm;
+    }
+    /* after si before au acel content, unde putem sa punem textul */
+	#watermark::after{
+			
+		opacity:0.65;
+		padding:8px;
+		display: block;
+		background: white;
+		border:3px double rgb(0, 0, 0, 0.65);
+        border-spacing: 3px;
+		border-radius: 5px;
+		content:"Copyright Dinu Andreea";
+        text-align: center;
+	}
+}
+
+@page {
+    size: A4 portrait;
+    margin-bottom:2cm;
+    margin-top:2cm;
+    counter-increment: page;
+        
+}
+@page:left{
+    margin-left:2.5cm;
+    margin-right:0.5cm;
+}
+@page:right{
+
+    margin-right:2.5cm;
+    margin-left:0.5cm;
+}

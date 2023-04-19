@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html  lang="ro">
+    <head>
+        <!-- <meta name="description" content="Cofetaria Dulcelind ofera prajituri, torturi, produse de patiserie cu optiunea de achizitie online si livrare prin curier.">
+        <meta name="keywords" content="cofetarie, Dulcelind, prajituri, torturi, dulce, pateuri, produse">
+        <title>Cofetăria Dulcelind - eroare</title> -->
+        
+        
+        <meta name="keywords" content="produse reduse,  bijuterii, accesoriu, cercei, colier, pret, bratara, comanda, favorite"><!--cuvintele cheie ale paginii; majoritatea motoarelor de căutare ignoră keywords -->
+        <meta name="description" content="Site de Bijuterii.Coliere.Cercei.Bratari.Talismane.Pandantive.Aur.Argint.Reduceri."><!-- descrierea paginii, adesea apare sub link când sunt afișate rezultatele căutării -->
+        
+        <title>ChicBiju - eroare</title>
+        
+        <link rel="stylesheet" type="text/css" href="/Resurse/css/eroare.css"
+        <%- include("../fragmente/head.ejs");  %> 
+
+
+    </head>
+    <body>
+        
+    <%- include("../fragmente/header.ejs");  %> 
+
+    <main>
+        <div id="err-coloane">
+			<div id="err-imag">
+				<img src="<%- locals.imagine %>" />
+			</div>
+			<section>
+				<h2><%- locals.titlu %></h2>
+				<p><%- locals.text %></p>
+			</section>
+		</div>
+    </main>
+    
+    <%- include("../fragmente/footer.ejs");  %> 
+
+
+    </body>
+</html>

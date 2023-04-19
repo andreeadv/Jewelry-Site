@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "sharp": "^0.32.0"
+  },
+  "name": "sitebijuterii",
+  "version": "1.0.0",
+  "description": "Site despre bijuterii",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "bijuterii",
+    "aur",
+    "argint",
+    "ChicBiju"
+  ],
+  "author": "Andreea Violeta Dinu",
+  "license": "ISC"
+}

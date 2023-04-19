@@ -1,0 +1,29 @@
+/* 
+*{
+  animation: none !important;
+  transition: none !important;
+} */
+  /* daca puneam dupa se anula si aia din html */
+/* pt scroll bar orizontal */
+.tcontainer{
+  overflow-x: auto;
+}
+
+html{
+    font-size:12px;
+    transition:0.3s linear;
+
+}
+body{
+  --spatiere-pagina:10px;
+  --padding-sectiune:5px;
+
+}
+#grid-pagina{
+  display: block;
+ 
+}
+#grid-pagina>*{
+    margin-bottom: 15px;
+}
+

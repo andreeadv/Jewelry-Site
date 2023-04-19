@@ -1,0 +1,12 @@
+body{
+    --inaltime-meniu:40px;
+    --latime-buton:210px;
+}
+
+#Acasa{
+    display: none;
+}
+
+#acasa-mediu{
+    display:block;
+}

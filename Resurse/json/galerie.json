@@ -1,0 +1,51 @@
+{
+	"cale_galerie":"Resurse/imagini/galerie",
+	"imagini": [
+		{
+			"fisier":"rsz_bratararoz.png",
+			"descriere":"Bratara Eleganta",
+			"luni":["martie","februarie","noiembrie","aprilie"]
+		},
+		{
+			"fisier":"rsz_4cerceisemiluna.png",
+			"descriere":"Cercei Semiluna",
+			"luni":["ianuarie","februarie","iunie","aprilie"]
+			
+		},
+		{
+			"fisier":"rsz_2cerceicirese.png",
+			"descriere":"Cercei Clasici",
+			"luni":["ianuarie","noiembrie","iunie","martie","aprilie"]
+		},
+		{
+			"fisier":"rsz_11coliercupandantivsaturn.png",
+			"descriere":"Colier Saturn",
+			"luni":["noiembrie","aprilie"]
+		},
+		{
+			"fisier":"rsz_cerceisaturn.png",
+			"descriere":"Cercei Saturn",
+			"luni":["ianuarie","noiembrie","iunie","martie","aprilie"]
+		},
+		{
+			"fisier":"rsz_1brataraperle.png",
+			"descriere":"Bratara Perle",
+			"luni":["ianuarie","noiembrie","iunie","martie","aprilie"]
+		},
+		{
+			"fisier":"rsz_brataramartisorcutalisman.png",
+			"descriere":"Martisor",
+			"luni":["februarie","martie"]
+		},
+		{
+			"fisier":"rsz_cerceimartisor.png",
+			"descriere":"Cercei Martisor",
+			"luni":["februarie","martie"]
+		},
+		{
+			"fisier":"rsz_1bratara2martisor.png",
+			"descriere":"Martisor",
+			"luni":["februarie","martie"]
+		}
+	]
+}
