@@ -2,17 +2,21 @@ const express = require("express");
 const fs=require('fs');
 const path=require('path');
 const sharp=require('sharp');
+const sass=require('sass');
 
 obGlobal={
     obErori: null,
-    obImagini: null
+    obImagini: null,
+    folderScss:path.join(__dirname, "Resurse/scss"),
+    folderCss:path.join(__dirname, "Resurse/CSS"),
+    folderBackup:path.join(__dirname, "backup"),
 }
 app= express();
 console.log("Folder proiect", __dirname);
 console.log("Cale Fisier", __filename);
 console.log("Director de lucru", process.cwd());
 
-vectorFoldere=["temp", "temp1"]
+vectorFoldere=["temp", "temp1", "backup"]
 for(let folder of vectorFoldere){
     // let caleFolder=__dirname+ "/"+ folder;
     let caleFolder=path.join(__dirname, folder)
@@ -21,9 +25,57 @@ for(let folder of vectorFoldere){
     }
 }
 
+function compileazaScss(caleScss, caleCss){
+    if(!caleCss){
+        let vectorCale=caleScss.split("\\");
+        let numeFisExt=vectorCale[vectorCale.length-1];
+        let numeFis=numeFisExt.split(".")[0];
+        caleCss=numeFis+ ".css";
+    }
+    // daca nu e cale abs pun fisiere chiar in foldere 
+    if (!path.isAbsolute(caleScss))
+        caleScss=path.join(obGlobal.folderScss,caleScss);
+    if (!path.isAbsolute(caleCss))
+        caleCss=path.join(obGlobal.folderCss,caleCss);
+    //la acest punct avem cai absolute in caleScss si caleCss 
+    let vectorCale=caleCss.split("\\");
+    numeFisCss=vectorCale[vectorCale.length-1];
+    if(fs.existsSync(caleCss)){
+        fs.copyFileSync(caleCss, path.join(obGlobal.folderBackup,numeFisCss));
+    }
+    rez=sass.compile(caleScss,{"sourceMap":true});
+    fs.writeFileSync(caleCss,rez.css);
+    console.log("Compilare SCSS",rez);
+
+}
+//compileazaScss("a.scss");
+
+vFisiere=fs.readdirSync(obGlobal.folderScss);
+console.log(vFisiere);
+for(let numeFis of vFisiere){
+    if(path.extname(numeFis)==".scss"){
+        compileazaScss(numeFis);
+    }
+}
+
+fs.watch(obGlobal.folderScss, function(eveniment,numeFis){
+    console.log(eveniment, numeFis);
+    if(eveniment=="change" || eveniment=="rename"){
+        //daca a fost sters si creat iar apare cu rename=>deci verif intai daca fisierul exista
+        let caleCompleta=path.join(obGlobal.folderScss, numeFis);
+        if(fs.existsSync(caleCompleta)){
+            compileazaScss(caleCompleta);
+        }
+    }
+
+})
+
+
 app.set("view engine", "ejs");
 
 app.use("/Resurse", express.static(__dirname+"/Resurse"));
+app.use("/node_modules", express.static(__dirname+"/node_modules"));
+
 
 app.use(/^\/Resurse(\/[a-zA-Z0-9]*)*$/,function(req,res){
     afisareEroare(res,403);
