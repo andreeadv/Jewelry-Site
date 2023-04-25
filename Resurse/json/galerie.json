@@ -35,17 +35,22 @@
 		{
 			"fisier":"rsz_brataramartisorcutalisman.png",
 			"descriere":"Martisor",
-			"luni":["februarie","martie"]
+			"luni":["februarie","martie","aprilie"]
 		},
 		{
 			"fisier":"rsz_cerceimartisor.png",
 			"descriere":"Cercei Martisor",
-			"luni":["februarie","martie"]
+			"luni":["februarie","martie","aprilie"]
 		},
 		{
 			"fisier":"rsz_1bratara2martisor.png",
 			"descriere":"Martisor",
-			"luni":["februarie","martie"]
+			"luni":["februarie","martie","aprilie"]
+		},
+		{
+			"fisier":"rsz_1cerceicristalverde.png",
+			"descriere":"Cercei Cristal",
+			"luni":["februarie","martie","aprilie"]
 		}
 	]
 }

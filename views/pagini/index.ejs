@@ -15,7 +15,6 @@
             <div id="grid-pagina">
             <section id="acasa">
                 <h2>Bine ati venit!</h2>
-                <button class="btn btn-primary">ceva</button>
                 <p>Bine ati venit pe site-ul nostru! Aici veti descoperi cele mai <i lang="fr">chic</i> <b>bijuterii</b>!<br> 
                     Va puteti alege modelele preferate in diferite culori si materiale.
                     Produsele noastre sunt perfecte pentru a fi oferite cadou celor dragi, avand disponibile o varietate de moduri
@@ -91,27 +90,42 @@
             <section id="populare">
                 <h2 id="hpopulare">Produse populare</h2>
                 <section id="galerie-statica">
-                    <h2>Prezentare produse</h2>
+                    <h3>Prezentare produse</h2>
+                    <br>
                     <div id="grid-galerie">
                         <% for (let imag of locals.imagini) {
                         d=new Date();
                         var v_luni=["ianuarie", "februarie", "martie","aprilie","mai","iunie","iulie","august","septembrie","octombrie","noiembrie","decembrie"]
                        if(imag.luni && imag.luni.includes(v_luni[d.getMonth()])){  
                             
-                            %>
+                         %>
                            
                                 <figure>
+                                    <div id="imgsidesc">
                                     <picture>
                                         <source srcset="<%- imag.fisier_mediu %>" media="(max-width:1000px)" />
-                                        <img src="<%- imag.fisier %>" alt="imagine">
+                                        <div id="imggal"><img src="<%- imag.fisier %>" alt="imagine" title="produs"></div>
                                     </picture>
                                     <figcaption><%- imag.descriere %></figcaption>
+                                    </div>
+                                     
                                 </figure>
-                    
+                                <div id="blank">
+                                    <div id=reflexie>
+                                    <div id="text">Produse </div>
+                                    <div id="text-reflectat">Produse</div>
+                                </div></div>
                                 <% }  %>
                         <% }  %>
-                    </div>           
+                     
+                    </div>   
+                          
                 </section>
+                <hr>
+                <br><br>
+                
+                <br><br>
+                    
                 <p>Produsele populare pe site-ul nostru in acest sezon  sunt <a href="#clips">cerceii tip clips</a>, acestia aducand 
                     o nota de eleganta tinutelor dumneavoastra de zi cu zi!
                     De asemenea, va aducem in atentie si alte produse populare, impreuna cu cateva <a href="https://youtu.be/cRLhQRaxGj8" 
@@ -261,6 +275,7 @@
                                 <li>Cercei rotunzi</li>
                             </ul>
                         </section>
+                        <button class="btn btn-primary "><a href="#cercei">DETALII</a></button>
                 </section>
                 <section id="accesorii">
                     <h2>ZONA 5 Lista de utilizatori online</h2>

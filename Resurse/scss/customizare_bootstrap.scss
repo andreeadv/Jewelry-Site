@@ -1,6 +1,45 @@
 @use '../../node_modules/bootstrap/scss/bootstrap.scss' with 
 (
-    $primary:red,
-    $secondary:purple
+    $primary:#ec90ce,
+    $secondary:purple,
+    $btn-border-width: 2px,
+    $body-bg: #F9D1FF,
+    $body-color: black,
+
+    $grid-breakpoints: (xs: 0,
+    sm: 500px,
+    md: 700px,
+    lg: 1000px,
+    xl: 1200px,
+    xxl: 1400px,
+    ),
+
+    $container-max-widths: (sm: 470px,
+    md: 660px,
+    lg: 940px,
+    xl: 1140px,
+    xxl: 1320px,
+    ),
+    // scss-docs-start border-variables
+    $border-width:1px,
+    $border-widths: (
+    1: 1px,
+    2: 2px,
+    3: 3px,
+    4: 4px,
+    5: 5px
+    ),
+    // scss-docs-start display-headings
+    $display-font-sizes: (
+    1: 2.5rem,
+    2: 2rem,
+    3: 1.5rem,
+    4: 1rem,
+    5: 0.5rem,
+    6: 0.25rem
+    ),
+
+    $font-family-base:'Libre Baskerville'
+    
 
 )
