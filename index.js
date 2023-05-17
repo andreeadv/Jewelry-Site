@@ -4,13 +4,38 @@ const path=require('path');
 const sharp=require('sharp');
 const sass=require('sass');
 
+const {Client} = require('pg');
+
+ 
+var client= new Client({database:"ProiectTW",
+        user:"andreea",
+        password:"123456",
+        host:"localhost",
+        port:5432});
+client.connect();
+client.query("select * from lab8_14", function(err, rez){
+    console.log("Eroare BD",err);
+ 
+    console.log("Rezultat BD",rez.rows);
+});
+
 obGlobal={
     obErori: null,
     obImagini: null,
     folderScss:path.join(__dirname, "Resurse/scss"),
     folderCss:path.join(__dirname, "Resurse/CSS"),
     folderBackup:path.join(__dirname, "backup"),
+    optiuniMeniu:[]
 }
+
+client.query("select * from unnest(enum_range(null::tipuri_bijuterii))", function(err, rezCategorie){
+    if (err){
+        console.log(err);
+    }else{
+        obGlobal.optiuniMeniu=rezCategorie.rows;
+    }
+});
+
 app= express();
 console.log("Folder proiect", __dirname);
 console.log("Cale Fisier", __filename);
@@ -26,27 +51,38 @@ for(let folder of vectorFoldere){
 }
 
 function compileazaScss(caleScss, caleCss){
+    console.log("cale:",caleCss);
     if(!caleCss){
-        let vectorCale=caleScss.split("\\");
-        let numeFisExt=vectorCale[vectorCale.length-1];
-        let numeFis=numeFisExt.split(".")[0];
-        caleCss=numeFis+ ".css";
+        // TO DO
+        // let vectorCale=caleScss.split("\\")
+        // let numeFisExt=vectorCale[vectorCale.length-1];
+        let numeFisExt=path.basename(caleScss);
+        let numeFis=numeFisExt.split(".")[0]   /// "a.scss"  -> ["a","scss"]
+        caleCss=numeFis+".css";
     }
-    // daca nu e cale abs pun fisiere chiar in foldere 
+    
     if (!path.isAbsolute(caleScss))
-        caleScss=path.join(obGlobal.folderScss,caleScss);
+        caleScss=path.join(obGlobal.folderScss,caleScss )
     if (!path.isAbsolute(caleCss))
-        caleCss=path.join(obGlobal.folderCss,caleCss);
-    //la acest punct avem cai absolute in caleScss si caleCss 
-    let vectorCale=caleCss.split("\\");
-    numeFisCss=vectorCale[vectorCale.length-1];
-    if(fs.existsSync(caleCss)){
-        fs.copyFileSync(caleCss, path.join(obGlobal.folderBackup,numeFisCss));
-    }
-    rez=sass.compile(caleScss,{"sourceMap":true});
-    fs.writeFileSync(caleCss,rez.css);
-    console.log("Compilare SCSS",rez);
+        caleCss=path.join(obGlobal.folderCss,caleCss )
+    
 
+    let caleBackup=path.join(obGlobal.folderBackup, "Resurse/CSS");
+    if (!fs.existsSync(caleBackup)) {
+        fs.mkdirSync(caleBackup,{recursive:true})
+    }
+    
+    // la acest punct avem cai absolute in caleScss si  caleCss
+    //TO DO
+    // let vectorCale=caleCss.split("\\");
+    // let numeFisCss=vectorCale[vectorCale.length-1]
+    let numeFisCss=path.basename(caleCss);
+    if (fs.existsSync(caleCss)){
+        fs.copyFileSync(caleCss, path.join(obGlobal.folderBackup, "Resurse/CSS",numeFisCss ))// +(new Date()).getTime()
+    }
+    rez=sass.compile(caleScss, {"sourceMap":true});
+    fs.writeFileSync(caleCss,rez.css)
+    //console.log("Compilare SCSS",rez);
 }
 //compileazaScss("a.scss");
 
@@ -76,6 +112,10 @@ app.set("view engine", "ejs");
 app.use("/Resurse", express.static(__dirname+"/Resurse"));
 app.use("/node_modules", express.static(__dirname+"/node_modules"));
 
+app.use("/*",function(req, res, next){
+    res.locals.optiuniMeniu=obGlobal.optiuniMeniu;
+    next();
+})
 
 app.use(/^\/Resurse(\/[a-zA-Z0-9]*)*$/,function(req,res){
     afisareEroare(res,403);
@@ -93,6 +133,52 @@ app.get("/ceva", function(req,res){
 app.get(["/index", "/", "/home"], function(req, res){
     res.render("pagini/index",{ip: req.ip, imagini:obGlobal.obImagini.imagini});
 })
+
+// PRODUSE, inainte de/* sa nu se potriveasca cu orice 
+app.get("/produse",function(req, res){
+    client.query("select * from unnest(enum_range(null::categorii_produse))", function(err, rezCategorie){
+        if (err){
+            console.log(err);
+        }
+        else{
+            let conditieWhere="";
+            if(req.query.tip){
+                conditieWhere=` where tip_produs='${req.query.tip}'`
+            }
+            client.query("select * from bijuterii"+conditieWhere , function( err, rez){
+                console.log(300)
+                if(err){
+                    console.log(err);
+                    afisareEroare(res, 2);
+                }
+                else
+                //al doilea query in callbacku primului
+                    res.render("pagini/produse", {produse:rez.rows, optiuni:rezCategorie.rows});
+            });
+        }
+    })
+      
+
+
+});
+
+
+app.get("/produs/:id",function(req, res){
+    console.log(req.params);
+   
+    client.query(`select * from bijuterii where id=${req.params.id}`, function( err, rezultat){
+        if(err){
+            console.log(err);
+            afisareEroare(res, 2);
+        }
+        else
+            res.render("pagini/produs", {prod:rezultat.rows[0]});
+    });
+});
+
+
+
+
 //regexp: ^\w+\.ejs$
 
 app.get("/*.ejs", function(req,res){

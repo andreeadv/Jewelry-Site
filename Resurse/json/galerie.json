@@ -4,53 +4,63 @@
 		{
 			"fisier":"rsz_bratararoz.png",
 			"descriere":"Bratara Eleganta",
-			"luni":["martie","februarie","noiembrie","aprilie"]
+			"luni":["martie","februarie","noiembrie","aprilie","mai"],
+			"autor": "pinterest"
 		},
 		{
 			"fisier":"rsz_4cerceisemiluna.png",
 			"descriere":"Cercei Semiluna",
-			"luni":["ianuarie","februarie","iunie","aprilie"]
+			"luni":["ianuarie","februarie","iunie","aprilie","mai"],
+			"autor": "pinterest"
 			
 		},
 		{
 			"fisier":"rsz_2cerceicirese.png",
 			"descriere":"Cercei Clasici",
-			"luni":["ianuarie","noiembrie","iunie","martie","aprilie"]
+			"luni":["ianuarie","noiembrie","iunie","martie","aprilie","mai"],
+			"autor": "pinterest"
 		},
 		{
 			"fisier":"rsz_11coliercupandantivsaturn.png",
 			"descriere":"Colier Saturn",
-			"luni":["noiembrie","aprilie"]
+			"luni":["noiembrie","aprilie","mai"],
+			"autor": "pinterest"
 		},
 		{
 			"fisier":"rsz_cerceisaturn.png",
 			"descriere":"Cercei Saturn",
-			"luni":["ianuarie","noiembrie","iunie","martie","aprilie"]
+			"luni":["ianuarie","noiembrie","iunie","martie","aprilie","mai"],
+			"autor": "pinterest"
 		},
 		{
 			"fisier":"rsz_1brataraperle.png",
 			"descriere":"Bratara Perle",
-			"luni":["ianuarie","noiembrie","iunie","martie","aprilie"]
+			"luni":["ianuarie","noiembrie","iunie","martie","aprilie","mai"],
+			"autor": "pinterest"
 		},
 		{
 			"fisier":"rsz_brataramartisorcutalisman.png",
 			"descriere":"Martisor",
-			"luni":["februarie","martie","aprilie"]
+			"luni":["februarie","martie","aprilie","mai"],
+			"autor": "pinterest"
 		},
 		{
 			"fisier":"rsz_cerceimartisor.png",
 			"descriere":"Cercei Martisor",
-			"luni":["februarie","martie","aprilie"]
+			"luni":["februarie","martie","aprilie","mai"],
+			"autor": "pinterest"
 		},
 		{
 			"fisier":"rsz_1bratara2martisor.png",
 			"descriere":"Martisor",
-			"luni":["februarie","martie","aprilie"]
+			"luni":["februarie","martie","aprilie","mai"],
+			"autor": "pinterest"
 		},
 		{
 			"fisier":"rsz_1cerceicristalverde.png",
 			"descriere":"Cercei Cristal",
-			"luni":["februarie","martie","aprilie"]
+			"luni":["februarie","martie","aprilie","mai"],
+			"autor": "pinterest"
 		}
 	]
 }

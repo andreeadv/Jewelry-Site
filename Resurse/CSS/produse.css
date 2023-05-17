@@ -1,0 +1,71 @@
+main{
+    --padd-main:1.5rem;
+    padding-left:var(--padd-main);
+    padding-right:var(--padd-main);
+}
+
+.grid-produse{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:40px 30px; 
+}
+.grid-produse .produs{
+    border-radius: 2rem;
+    box-shadow: 0px 0px 0.8rem 0.3rem var(--culoare-border);
+    overflow: hidden;
+    background-color: var(--culoare2-tabel);
+}
+
+.grid-produse .produs h3{
+    font-weight:bold;
+    text-align: center;
+    margin-top: 0;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.produs{
+    position: relative;
+    padding: 2rem;
+}
+
+.grid-produse .produs p.categorie{
+    text-align:center;
+    font-weight:bold;
+} 
+
+.grid-produse .produs figure{
+    text-align: center;
+    margin-top: 50px;
+}
+
+
+.grid-produse .produs figure img {
+    border: 1px solid white; 
+    box-shadow: 0px 0px 0.8rem 0.3rem white;
+    border-radius: 1rem;
+     
+}
+
+.grid-produse .produs .info-prod {
+    display: flex;
+    flex-direction: column;
+}
+
+.grid-produse .produs .info-prod p {
+    font-weight: bold;
+    font-size: small;
+}
+.prd{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+
+
+#filtrare{
+    margin-bottom: 5px;
+}
+#resetare{
+    margin-bottom: 5px;
+}

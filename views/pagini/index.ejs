@@ -6,7 +6,9 @@
         
         <meta name="keywords" content="produse reduse,  bijuterii, accesoriu, cercei, colier, pret, bratara, comanda, favorite"><!--cuvintele cheie ale paginii; majoritatea motoarelor de căutare ignoră keywords -->
         <meta name="description" content="Site de Bijuterii.Coliere.Cercei.Bratari.Talismane.Pandantive.Aur.Argint.Reduceri."><!-- descrierea paginii, adesea apare sub link când sunt afișate rezultatele căutării -->
+        
         <%- include("../fragmente/head.ejs") %>
+
 
     </head>
     <body>
@@ -106,7 +108,13 @@
                                         <source srcset="<%- imag.fisier_mediu %>" media="(max-width:1000px)" />
                                         <div id="imggal"><img src="<%- imag.fisier %>" alt="imagine" title="produs"></div>
                                     </picture>
-                                    <figcaption><%- imag.descriere %></figcaption>
+                                    <% if(imag.autor) { %>
+                                        <figcaption><%- imag.descriere %> by
+                                                <%- imag.autor %></figcaption>
+                                        <% } else { %>
+                                            <figcaption><%- imag.descriere %>
+                                            </figcaption>
+                                            <% } %>
                                     </div>
                                      
                                 </figure>

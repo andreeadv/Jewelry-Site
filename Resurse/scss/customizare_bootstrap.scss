@@ -1,7 +1,7 @@
 @use '../../node_modules/bootstrap/scss/bootstrap.scss' with 
 (
-    $primary:#ec90ce,
-    $secondary:purple,
+    $primary:rgb(196, 5, 196),
+    $secondary:#ec90ce,
     $btn-border-width: 2px,
     $body-bg: #F9D1FF,
     $body-color: black,
@@ -45,7 +45,7 @@
     6: 0.25rem
     ),
 
-    $font-family-base:'Libre Baskerville'
-    
+    $font-family-base:'Libre Baskerville',
+    $btn-font-size-lg:15px
 
 )

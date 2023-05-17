@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html  lang="ro">
+    <head>
+        <meta name="keywords" content="produse reduse,  bijuterii, accesoriu, cercei, colier, pret, bratara, comanda, favorite"><!--cuvintele cheie ale paginii; majoritatea motoarelor de căutare ignoră keywords -->
+        <meta name="description" content="Site de Bijuterii.Coliere.Cercei.Bratari.Talismane.Pandantive.Aur.Argint.Reduceri."><!-- descrierea paginii, adesea apare sub link când sunt afișate rezultatele căutării -->
+        
+        <title>ChicBiju - home</title>
+        <%- include("../fragmente/head") %>     
+        <link href="/Resurse/css/produs.css" type="text/css" rel="stylesheet" />
+    </head>
+    <body>
+    <%- include("../fragmente/header") %>
+
+    <main>
+        <section>
+            <h2>Pagină produs</h2>
+                <article id="art-produs">
+                    <h3><span class="nume"><%- locals.prod.nume %></span></h3>
+                    <p>Pret: <span class="pret"><%- locals.prod.pret %> </span></p>
+                    <p>Descriere: <span class="descriere"><%- locals.prod.descriere %> </span></p>
+                    <p>Gramaj: <span class="gramaj"><%- locals.prod.gramaj %> </span></p>
+                    <p>Material: <span class="material"><%- locals.prod.material %> </span></p>
+                    <p>Categorie: <span class="categorie"><%- locals.prod.categorie %> </span></p>
+                    <p>Impachetatare cadou: <span class="pt_diabetici"><%- locals.prod.impachetare_cadou %> </span></p>
+                    <p>Data adăugare: <span class="categorie"><%- locals.prod.data_adaugare %> </span></p>
+                    <figure class="imag-produs">
+                        <img  src="/Resurse/imagini/produse/<%- locals.prod.imagine %>" alt="[imagine <%- locals.prod.nume %>]" />
+                    </figure>    
+                </article>
+            
+        </section>
+    </main>
+
+    <%- include("../fragmente/footer") %>
+    </body>
+</html>

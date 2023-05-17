@@ -295,7 +295,7 @@ header{
 /* etapa 4 */
 
 main a:visited{
-    color:var(--avisited);
+    color:var(--culoare-border-buton);
 }
 /* fara acel not se miscau butoanele ciudat */
 
@@ -320,10 +320,15 @@ main a{
     background-size: 0% 0%; 
     background-repeat: no-repeat;
     transition: all 0.5s linear;
+    
 } 
 main a:hover{
     background-size: 100% 100%;
 }
+footer a{
+    color:var(--avisited);
+  }
+  
 
 footer{
     background-color:var(--culoare1-tabel);
@@ -358,7 +363,7 @@ video::cue{
 
 /*  Stilizare hr  */
 hr{
-    width:80%;
+    width:85%;
     height:4px;
     margin-left: auto;
     margin-right: auto;
@@ -367,7 +372,7 @@ hr{
 hr::before{
     content: "❃";
     position:absolute;
-    margin-left: -25px;
+    left: 8%;
     margin-top:-15px;
     font-size: 20px;
     color:var(--culoarestelute);  
@@ -377,7 +382,7 @@ hr::before{
 hr::after{
   content: "❃";
   position: absolute;
-  right:165px;
+  right:8%;
   margin-top:-15px;
   font-size: 20px;
   color:var(--culoarestelute);
@@ -427,8 +432,7 @@ hr::after{
   }
   
 
-  
-  
+ 
   
   
   
