@@ -1,4 +1,4 @@
-window.onload=function() {
+window.addEventListener("DOMContentLoaded", function () {
 
     document.getElementById("inp-pret").onchange=function(){
         document.getElementById("infoRange").innerHTML=`(${this.value})`
@@ -119,5 +119,33 @@ window.onload=function() {
     document.getElementById("sortDescrescMaterial").onclick=function(){
         sortare(-1);
     }
-
-}
+    window.onkeydown= function(e){
+        if (e.key=="c" && e.altKey){
+            if(document.getElementById("info-suma"))
+                return;
+            var produse=document.getElementsByClassName("produs");
+            let suma=0;
+            for (let prod of produse){
+                //pentru a aparea pretul doar pentru produsele vizibile
+                if(prod.style.display!="none")
+                {
+                    let pret=parseFloat(prod.getElementsByClassName("val-pret")[0].innerHTML);
+                    suma+=pret;
+                }
+            }
+            
+            let p=document.createElement("p");
+            p.innerHTML=suma;
+            p.id="info-suma";
+            ps=document.getElementById("p-suma");
+            container = ps.parentNode;
+            frate=ps.nextElementSibling
+            container.insertBefore(p, frate);
+            setTimeout(function(){
+                let info=document.getElementById("info-suma");
+                if(info)
+                    info.remove();
+            }, 2000)
+        }
+    }
+});

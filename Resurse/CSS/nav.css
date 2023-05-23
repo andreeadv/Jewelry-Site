@@ -7,9 +7,14 @@ body{
     --latime-buton:217px;
     --culoare-meniu:var(--culoare1-tabel);
     --highlight-meniu:#e67fb2;
+    --text-meniu:black;
+}
+body.dark{
+    --highlight-meniu:#af7a93;
+    --text-meniu:rgb(247, 183, 213);
 }
 nav{
-    --text-meniu:black;
+    
     background-color: var(--culoare1-tabel);
     /* pt a scoate latimea scrollbarului vertical */
     width: calc(100vw - 18px);
@@ -25,13 +30,13 @@ ul.meniu{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-  
+    
 }
 ul.meniu>li{
     flex-grow: 0;
     flex-shrink:0;
     flex-basis: var(--latime-buton);
-
+    
 }
 ul.meniu, ul.meniu ul{
     padding:0;

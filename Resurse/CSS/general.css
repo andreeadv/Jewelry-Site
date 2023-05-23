@@ -24,9 +24,31 @@ body{
     --culoare-grid:#FDC5C3;
     --c1gradient:#f579cc;
     --culoarestelute:black;
+    --culoarehr:rgb(83, 3, 90);
     /* sa nu mai am la meniu spatierea din stanga */
     margin:0;
     font-family: 'Libre Baskerville', serif;
+}
+body.dark{
+    --culoare-background:#694851;
+    --culoare-highlight:#4e4150;
+    --culoare-text:rgb(238, 228, 228);
+    --culoare-border:#a13d80;
+    --culoare-border-buton:#942c67;
+    --avisited:#4b0634;
+    --subtitrari:#2c0a21;
+    --culoare-taburi:#6d3531;
+    --latime-tab:120px;
+    --inaltime-buton:60px;
+    --culoare2-tabel:#aa858a;
+    --culoare1-tabel:#804a65; 
+    --spatiere-pagina:50px;
+    --padding-sectiune:15px; 
+    --radius-tabel:15px;
+    --culoare-grid:#5c2863;
+    --c1gradient:#c29db5;
+    --culoarestelute:rgb(250, 227, 151);
+    --culoarehr:white;
 }
 
 body{
@@ -367,7 +389,7 @@ hr{
     height:4px;
     margin-left: auto;
     margin-right: auto;
-    background-color:black;
+    background-color:var(--culoarehr);
     }
 hr::before{
     content: "❃";
@@ -431,6 +453,9 @@ hr::after{
    
   }
   
+#detalii{
+    color:#2c0a21;
+}
 
  
   
