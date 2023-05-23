@@ -21,7 +21,7 @@
             <p><label>Usor (gramaj &lt; 10)
                 <input id="i_rad1"  name="gr_rad" value="0:10" type="radio"/>
             </label></p>
-            <p><label>Mediu (10&le; gramaj &lt; 15)
+            <p><label >Mediu (10&le; gramaj &lt; 15)
                 <input id="i_rad2"  name="gr_rad" value="10:15" type="radio"/>
             </label>
             <p><label>Greu (15&le; gramaj)
@@ -31,6 +31,7 @@
                 <input id="i_rad4" checked name="gr_rad" value="toate" type="radio"/>
             </label>
         </div>
+        
         <!-- <div> Material:
             <p><label>Aur
                 <input id="i_rad4"  name="gr_rad1" value="aur" type="radio"/>
@@ -47,8 +48,8 @@
         </div> -->
 
 
-        <label> Pret minim: <input type="range" id="inp-pret" value="0" min="0"  max="250"> <span id="infoRange">(0)</span></label>
-        <label>Select simplu:
+        <label> Pret: <input type="range" id="inp-pret" value="0" min="0"  max="250"> <span id="infoRange">(0)</span></label>
+        <label>Categorile produse:
             <select id="inp-categorie">
                 <option id="sel-toate" selected value="toate">toate</option>
                 <% for (let opt of locals.optiuni) { %>
@@ -56,12 +57,39 @@
                 <% } %>
             </select>
         </label>
+       
+        <label>Datalist:
+            <input list="id_lista" id="i_datalist">
+            <datalist id="id_lista">
+                <option value="data1">Datalist 1</option>
+                <option value="data2">Datalist 2</option>
+            </datalist>
+        </label>
+        <div>
+        <label>Interval de pret:
+            <select id="i_sel_multiplu" multiple size="4" class="form-select">
+                <option value="0-500" selected>oricat</option>
+                <option value="30-80">30-80</option>
+                <option value="80-130">80-130</option>
+                <option value="130-180">130-180</option>
+                <option value="180-230">180-230</option>
+                <option value="230-280">230-280</option>
+            </select>
+        </label>
+        </div>
+        <br>
+        <div  class="form-floating">
+            <textarea class="form-control" id="i_textarea" placeholder=" " required></textarea>
+            <label for="i_textarea">Descriere produs</label>
+        </div>
+        <br>
+    
         <p>
         <button id="filtrare" class="btn btn-primary btn-lg">Filtreaza</button> 
 
         <button id="resetare" class="btn btn-primary btn-lg">Reseteaza</button><br/>
-        <button id="sortCrescNume" class="btn btn-secondary btn-lg">Sorteaza crescator dupa pret si nume</button>
-        <button id="sortDescrescNume" class="btn btn-secondary btn-lg">Sorteaza descrescator dupa pret si nume</button>
+        <button id="sortCrescMaterial" class="btn btn-secondary btn-lg">Sorteaza crescator dupa pret si material</button>
+        <button id="sortDescrescMaterial" class="btn btn-secondary btn-lg">Sorteaza descrescator dupa pret si material</button>
         
         </p>
         
@@ -80,8 +108,26 @@
                                 <p class="gramaj">Gramaj: <span class="val-gramaj"><%- prod.gramaj%> grame</span></p>
                                 <p class="material">Material: <span class="val-material"><%- prod.material%></span></p>
                                 <p class="pietreincluse">Pietre incluse: <span class="val-pietreincluse"><%- prod.pietreincluse%></span></p>
-                                <p class="data_adaugare">Data Adaugare: <span class="val-data_adaugare"><%- prod.data_adaugare%></span></p>
-                                <!-- booleana -->
+                                <% function formatDate(date) {
+                                    const options = {
+                                        day: '2-digit',
+                                        month: 'long',
+                                        year: 'numeric',
+                                        weekday: 'long'
+                                    };
+                                    const formattedDate = new Date(date).toLocaleDateString('ro-RO', options);
+                                    //descompune șirul formattedDate în patru componente și le atribuie variabilelor respective weekday, month, day și year
+                                    const [weekday, day, month , year] = formattedDate.split(' ');
+                                    return `${weekday.charAt(0).toUpperCase() + weekday.slice(1)} ${day}-${month.charAt(0).toUpperCase() + month.slice(1)}-${year} `;
+                                } %>
+                                <p class="data_adaugare">Data Adaugare: <span class="val-data_adaugare"><%- formatDate(prod.data_adaugare) %></span></p>
+                                <% function yesorno(impachetare) {
+                                    if(impachetare)
+                                        return "DA";
+                                    else 
+                                        return "NU";
+                                } %>
+                                <p>Impachetatare cadou: <span class="impachetare"><%- yesorno(prod.impachetare_cadou) %> </span></p>
                             </div>
                             <figure>
                                 <a href="/produs/<%-prod.id %>" ><img src="/Resurse/imagini/produse/<%- prod.imagine %>" style="width:80%;height:auto;" alt="[imagine <%- prod.nume %>]" /></a>

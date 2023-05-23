@@ -52,9 +52,9 @@
                 <li><a href="/produse?tip=pandantive"><span class="sageata">→</span>Pandantive</a></li>-->
                 
                 <% for (let opt of locals.optiuniMeniu) { %>
-                    <li value="<%- opt.unnest %>"><a href="/produse?tip=<%- opt.unnest %>"><%- opt.unnest %></a> </li>
+                    <li value="<%- opt.unnest %>"><a href="/produse?tip=<%- opt.unnest %>"><span class="sageata">→</span><%- opt.unnest %></a> </li>
                 <% } %> 
-                <li><a href="#ingrijire"><span class="sageata">→</span>ingrijire</a></li>
+                <li><a href="/#ingrijire"><span class="sageata">→</span>ingrijire</a></li>
             </ul>
         </li>
         <li><a href="#comanda">Comanda</a></li>
