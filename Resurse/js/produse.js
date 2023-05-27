@@ -71,10 +71,9 @@ window.addEventListener("DOMContentLoaded", function () {
 
             let categorie=prod.getElementsByClassName("val-categorie")[0].innerHTML;
             let cond5= ( val_categ=="toate" ||  val_categ==categorie)
-
+            //se aplica doar ultimul selectat
             let pretininterval=parseFloat(prod.getElementsByClassName("val-pret")[0].innerHTML);
             let cond6= (p_a<=pretininterval && pretininterval<p_b);
-            //merge filtrul cu select multiplu dr cand il adaug nu mai merg celelale filtre 
             if (cond1&&cond2&&cond4&&cond5&&cond6){
                 prod.style.display="block";
             }

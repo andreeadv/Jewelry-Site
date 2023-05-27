@@ -46,6 +46,14 @@
     ),
 
     $font-family-base:'Libre Baskerville',
-    $btn-font-size-lg:15px
+    $btn-font-size-lg:15px,
+    //marire bulina cu 50% fata de font-sizeul html-ului
+    $form-range-thumb-width: 1.5rem,
+    $form-range-thumb-height: 1.5rem,
+    // culoare bulina
+    $form-range-thumb-bg: #d31f88,
+
+    // culoare slider
+    $form-range-track-bg: #5f1340
 
 )
