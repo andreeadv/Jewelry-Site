@@ -457,3 +457,15 @@ hr::after{
     color:#2c0a21;
 }
 
+/* switch schimbare tema */
+.schimbaretema {
+    display: flex;
+    margin-top: 0px;
+    position: fixed;
+    top: 12px;
+    right: 5px;
+}
+
+.soare {
+    margin-right: 6px;
+}

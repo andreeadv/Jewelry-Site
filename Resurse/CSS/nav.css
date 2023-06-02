@@ -123,14 +123,3 @@ a:hover .sageata {
     display: block;
     transform: translateX(100%);
 }
-/* switch schimbare tema */
-.schimbaretema{
-    display:flex;
-    margin-top:-35px;
-    margin-left:5px;
-}
-  
-  
-.soare{
-    margin-right:6px;
-}

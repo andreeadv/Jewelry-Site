@@ -15,8 +15,9 @@
     <main>
         <section>
             <h2>Pagină produs</h2>
+            <div class="produs">
                 <article id="art-produs">
-                    <h3><span class="nume"><%- locals.prod.nume %></span></h3>
+                    <h3><span id="titluprod" class="nume"><%- locals.prod.nume %></span></h3>
                     <p>Pret: <span class="pret"><%- locals.prod.pret %> </span></p>
                     <p>Descriere: <span class="descriere"><%- locals.prod.descriere %> </span></p>
                     <p>Gramaj: <span class="gramaj"><%- locals.prod.gramaj %> </span></p>
@@ -47,7 +48,7 @@
                         <img  src="/Resurse/imagini/produse/<%- locals.prod.imagine %>" alt="[imagine <%- locals.prod.nume %>]" />
                     </figure>    
                 </article>
-            
+            </div>
         </section>
     </main>
 

@@ -5,8 +5,8 @@ h2{
     margin:0 auto;
     width:70%;
     max-width:700px;
-    background-color: var(--cl-light-t);
-    box-shadow: 0px 0px 10px 5px grey;
+    background-color: var(--culoare2-tabel);
+    box-shadow: 0px 0px 10px 5px var(--culoare-border-buton);
     padding:0.4rem;
 }
 
@@ -16,22 +16,30 @@ h2{
     font-weight:bold;
     font-size:1.1rem;
 }
-
+h3{
+    color:var(--avisited);
+    font-weight: bold;
+    text-align: center;
+}
 #art-produs p span{
     font-weight: normal;
 }
 #art-produs p:nth-of-type(even){
-    background-color: var(--culoare-roz-inchis);
+    background-color:var(--culoare2-tabel);
 }
 #art-produs p:nth-of-type(odd){
-    background-color: var(--cl-marcare);
+    background-color: var(--culoare1-tabel);
 }
 .imag-produs{
     text-align: center;
 }
 .imag-produs img{
+    margin-top:15px;
     width:50%;
     height:auto;
+    border: 1px solid white; 
+    box-shadow: 0px 0px 0.8rem 0.3rem white;
+    border-radius: 1rem;
 }
 @media screen and (max-width: 700px){
     #art-produs{
