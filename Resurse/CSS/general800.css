@@ -26,3 +26,7 @@ body{
 #grid-pagina>*{
     margin-bottom: 15px;
 }
+/* dezactivare animatie banner pe exran mic */
+.disclbanner.animation {
+  animation: slideUp 0s linear;
+}

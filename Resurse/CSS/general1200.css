@@ -39,3 +39,9 @@ body{
 .tcontainer{
     overflow-x: auto;
   }
+
+
+/* dezactivare animatie banner pe exran mediu */
+.disclbanner.animation {
+    animation: slideUp 0s linear;
+  }

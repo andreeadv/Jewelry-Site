@@ -180,9 +180,9 @@ body{
     width: 55px;
     height: 55px;
     /* dest fata de marg */
-    bottom: 20px;
+    bottom: 40px;
     right: 20px;
-
+    z-index: 1;
 }
 #int {
     width: 0;
@@ -469,3 +469,46 @@ hr::after{
 .soare {
     margin-right: 6px;
 }
+
+.disclbanner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--culoare-border-buton);
+    display: none;
+  }
+  
+.inbanner p{
+   text-align: center;
+   font-size: 20px;
+   font-family: bold;
+
+}
+.inbanner button{
+    background-color: var(--culoare-border);
+    cursor: pointer;
+    border:1px solid var(--culoare-grid);
+    border-radius: 2px;
+    margin-top: 2px;
+}
+  
+@keyframes slideUp {
+    0% {
+      transform: translateY(100%);
+      color: rgb(252, 243, 243);
+    }
+    50% {
+      transform: translateY(-20px);
+      color: rgb(138, 133, 133);
+    }
+    100% {
+      transform: translateY(0);
+      color:  black;
+    }
+  }
+
+.disclbanner.animation {
+    animation: slideUp 3s linear;
+}
+

@@ -4,7 +4,7 @@
 		{
 			"fisier":"rsz_bratararoz.png",
 			"descriere":"Bratara Eleganta",
-			"luni":["martie","februarie","noiembrie","aprilie","mai"],
+			"luni":["martie","februarie","noiembrie","aprilie","mai","iunie"],
 			"autor": "pinterest"
 		},
 		{
@@ -23,7 +23,7 @@
 		{
 			"fisier":"rsz_11coliercupandantivsaturn.png",
 			"descriere":"Colier Saturn",
-			"luni":["noiembrie","aprilie","mai"],
+			"luni":["noiembrie","aprilie","mai","iunie"],
 			"autor": "pinterest"
 		},
 		{
@@ -41,25 +41,25 @@
 		{
 			"fisier":"rsz_brataramartisorcutalisman.png",
 			"descriere":"Martisor",
-			"luni":["februarie","martie","aprilie","mai"],
+			"luni":["februarie","martie","aprilie","mai","iunie"],
 			"autor": "pinterest"
 		},
 		{
 			"fisier":"rsz_cerceimartisor.png",
 			"descriere":"Cercei Martisor",
-			"luni":["februarie","martie","aprilie","mai"],
+			"luni":["februarie","martie","aprilie","mai","iunie"],
 			"autor": "pinterest"
 		},
 		{
 			"fisier":"rsz_1bratara2martisor.png",
 			"descriere":"Martisor",
-			"luni":["februarie","martie","aprilie","mai"],
+			"luni":["februarie","martie","aprilie","mai","iunie"],
 			"autor": "pinterest"
 		},
 		{
 			"fisier":"rsz_1cerceicristalverde.png",
 			"descriere":"Cercei Cristal",
-			"luni":["februarie","martie","aprilie","mai"],
+			"luni":["februarie","martie","aprilie","mai","iunie"],
 			"autor": "pinterest"
 		}
 	]

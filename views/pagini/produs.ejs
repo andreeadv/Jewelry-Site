@@ -18,9 +18,24 @@
             <div class="produs">
                 <article id="art-produs">
                     <h3><span id="titluprod" class="nume"><%- locals.prod.nume %></span></h3>
-                    <p>Pret: <span class="pret"><%- locals.prod.pret %> </span></p>
-                    <p>Descriere: <span class="descriere"><%- locals.prod.descriere %> </span></p>
-                    <p>Gramaj: <span class="gramaj"><%- locals.prod.gramaj %> </span></p>
+                    <p>Pret: <span class="pret"><%- locals.prod.pret %> lei</span></p>
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Descriere:
+                            </button>
+                          </h2>
+                          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <p><span class="descriere"><%- locals.prod.descriere %> </span></p>
+                            </div>
+                          </div>
+                        </div>
+
+                    </div>
+                   
+                    <p>Gramaj: <span class="gramaj"><%- locals.prod.gramaj %> grame</span></p>
                     <p>Material: <span class="material"><%- locals.prod.material %> </span></p>
                     <p>Categorie: <span class="categorie"><%- locals.prod.categorie %> </span></p>
                     <% function yesorno(impachetare) {
